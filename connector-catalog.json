@@ -1,0 +1,23 @@
+{
+  "publisher": "Findem",
+  "homepage": "https://studio.findem.ai/mcps",
+  "privacy_policy": "https://www.findem.ai/privacy-policy-corp",
+  "support_email": "support@findem.ai",
+  "connectors": [
+    {
+      "name": "Findem People",
+      "url": "https://mcp-v1.findem.ai/services/findem-people",
+      "description": "Search talent, resolve people, analyze candidate pools, create scorecards, and review candidate details using Findem's recruiting and people-search tools."
+    },
+    {
+      "name": "Findem Companies",
+      "url": "https://mcp-v1.findem.ai/services/findem-companies",
+      "description": "Research companies, resolve company identities, inspect taxonomy, and retrieve company intelligence from Findem."
+    },
+    {
+      "name": "Findem Tempo",
+      "url": "https://mcp-v1.findem.ai/services/findem-tempo",
+      "description": "Answer historical workforce questions such as who worked at a company in a given year, who joined in a given year, or who left in a given year."
+    }
+  ]
+}
