@@ -1,21 +1,15 @@
 # Findem Studio OpenAI Submission Packet
 
-This packet is for submitting Findem Studio to OpenAI using the current production MCP topology.
+This packet is for submitting Findem Studio to OpenAI as one ChatGPT app backed by one production MCP endpoint.
 
-## Recommended submission strategy
+## App summary
 
-Submit three ChatGPT connectors now:
-
-- `Findem People`
-- `Findem Companies`
-- `Findem Tempo`
-
-Reason: ChatGPT connector creation uses a single connector URL per app/connector, and Findem's current production deployment exposes three distinct MCP server URLs rather than one unified `/mcp` entry point.
-
-## Shared listing fields
-
+- App name:
+  - `Findem Studio`
 - Publisher / brand:
   - `Findem`
+- Connector URL:
+  - `https://mcp-v1.findem.ai/mcp`
 - Homepage:
   - `https://studio.findem.ai/mcps`
 - Privacy policy:
@@ -24,42 +18,24 @@ Reason: ChatGPT connector creation uses a single connector URL per app/connector
   - `support@findem.ai`
 - Privacy contact:
   - `privacy@findem.ai`
+- Authentication:
+  - `OAuth 2.0`
 
-## Shared review requirements
+## Short description
+
+- `Findem Studio connects ChatGPT to Findem's recruiting, company-intelligence, and workforce-history tools through one OAuth-protected MCP server.`
+
+## Longer description
+
+- `Findem Studio lets ChatGPT search talent, refine recruiting pools, create scorecards, inspect candidate details, research companies, analyze company metrics, and answer historical workforce questions. Users authenticate with Findem OAuth, then ChatGPT can use the enabled Findem tools from the customer's Findem account through one managed MCP connection.`
+
+## Review requirements
 
 - All tools must have correct `readOnlyHint`, `destructiveHint`, and explicit `openWorldHint`.
-- Because Findem tools operate within a closed private SaaS system, `openWorldHint` should remain explicit and `false` for the private Findem tools. Public web fetch behavior should remain explicitly marked when applicable.
-- Provide a fully featured demo account with sample data and no MFA.
+- Because Findem tools operate within a closed private SaaS system, `openWorldHint` should remain explicit and `false` for the private Findem tools. Public web fetch behavior such as job-posting fetch should remain explicitly marked when applicable.
+- Provide a fully featured demo account with sample data and no MFA or 2FA.
 - Verify behavior on ChatGPT web and mobile before submission.
-
-## Connector list
-
-### Findem People
-
-- Connector name:
-  - `Findem People`
-- Connector URL:
-  - `https://mcp-v1.findem.ai/services/findem-people`
-- Description:
-  - `Search talent, resolve people, analyze candidate pools, create scorecards, and review candidate details using Findem's recruiting and people-search tools.`
-
-### Findem Companies
-
-- Connector name:
-  - `Findem Companies`
-- Connector URL:
-  - `https://mcp-v1.findem.ai/services/findem-companies`
-- Description:
-  - `Research companies, resolve company identities, inspect taxonomy, and retrieve company intelligence from Findem.`
-
-### Findem Tempo
-
-- Connector name:
-  - `Findem Tempo`
-- Connector URL:
-  - `https://mcp-v1.findem.ai/services/findem-tempo`
-- Description:
-  - `Answer historical workforce questions such as who worked at a company in a given year, who joined in a given year, or who left in a given year.`
+- Capture screenshots for install, auth, and working tool usage.
 
 ## Reviewer account
 
@@ -68,18 +44,18 @@ Reason: ChatGPT connector creation uses a single connector URL per app/connector
 - Demo account password:
   - `TBD`
 - Notes:
-  - no MFA
-  - include sample data that exercises People, Companies, and Tempo
+  - no MFA or 2FA
+  - include sample data that exercises recruiting, companies, and tempo workflows
+  - make sure email verification is already completed before handing the account to reviewers
 
 ## Example prompts
 
-- People:
-  - `Find senior product marketers in San Francisco who worked at developer-tools companies.`
-- Companies:
-  - `Find recruiting software companies between 200 and 2000 employees.`
-- Tempo:
-  - `Who joined Stripe as a product manager in 2018?`
+- `Find senior product marketers in San Francisco who worked at developer-tools companies.`
+- `Find recruiting software companies between 200 and 2000 employees and summarize their hiring signals.`
+- `Who joined Stripe as a product manager in 2018?`
 
-## Future simplification
+## Suggested expected outcomes
 
-If Findem later exposes one unified production `/mcp` endpoint, replace the three-connector strategy above with one `Findem Studio` app submission.
+- The first prompt returns a people search plus relevant candidate results from Findem.
+- The second prompt returns matching companies, company detail, and workforce or hiring metrics.
+- The third prompt returns historical workforce matches from Findem Tempo.

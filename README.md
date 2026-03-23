@@ -1,16 +1,14 @@
-# Findem Studio OpenAI Connectors
+# Findem Studio OpenAI App
 
-This repository contains the OpenAI Apps / ChatGPT submission materials for Findem Studio's production MCP surfaces.
+This repository contains the OpenAI Apps / ChatGPT submission materials for Findem Studio's unified production MCP surface.
 
-## Current production connector shape
+## Production connector shape
 
-OpenAI's ChatGPT connector flow expects a single MCP server URL per connector. Findem Studio currently exposes three production MCP endpoints, so the clean current packaging is three ChatGPT connectors:
+Submit one ChatGPT app:
 
-- `findem-people` -> `https://mcp-v1.findem.ai/services/findem-people`
-- `findem-companies` -> `https://mcp-v1.findem.ai/services/findem-companies`
-- `findem-tempo` -> `https://mcp-v1.findem.ai/services/findem-tempo`
+- `Findem Studio` -> `https://mcp-v1.findem.ai/mcp`
 
-If you later want one single OpenAI app listing called `Findem Studio`, the backend should expose a unified top-level `/mcp` endpoint that bundles all of the public tools behind one connector URL.
+This unified endpoint bundles Findem People, Findem Companies, and Findem Tempo behind one public OAuth-protected MCP server.
 
 ## Shared production links
 
@@ -21,8 +19,7 @@ If you later want one single OpenAI app listing called `Findem Studio`, the back
 ## Repository layout
 
 - `OPENAI_SUBMISSION.md`
+- `READY_TO_SUBMIT.md`
 - `CONNECT_CHATGPT.md`
 - `connector-catalog.json`
-- `connectors/findem-people.md`
-- `connectors/findem-companies.md`
-- `connectors/findem-tempo.md`
+- `connectors/findem-studio.md`
